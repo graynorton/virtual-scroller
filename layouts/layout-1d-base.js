@@ -95,6 +95,7 @@ export default class Layout extends EventTarget {
   set viewportSize(dims) {
     const {_viewDim1, _viewDim2} = this;
     Object.assign(this._viewportSize, dims);
+    this._overhang = _viewDim1;
     if (_viewDim2 !== this._viewDim2) {
       this._viewDim2Changed();
     } else if (_viewDim1 !== this._viewDim1) {
